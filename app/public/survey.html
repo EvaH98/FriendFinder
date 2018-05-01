@@ -6,12 +6,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 	<style type="text/css">
 		body {
 			background-color: black;
 			color: white;
 		}
+
+    li {
+      text-decoration: none;
+    }
 
 		.questionsbody {
 			width: 900px;
@@ -76,28 +79,33 @@
 		</main>
 
 		<div class="questionsbody">
-		
-			<div id="personinfo">
-				<p class="question">Name (required)</p>
-				<input type="text" class="validate" placeholder="Your Name Here" id="userName">
-				<p class="question">Link to a Photo(required)</p>
-				<input type="text" class="validate" placeholder="Photo Link Here" id="userPhoto">
-			</div>
+      
+        <div id="personal">
+			  <div class="input-field col s6">
+              <h5>Name (Required)</h5>
+              <input type="text" class="validate" placeholder="Your Name Here" id="userName">
+        </div>
 
-      <p></p>
+        <div class="input-field col s6">
+              <h5>Link to Photo Image (Required)</h5>
+              <input type="text" class="validate" placeholder="Photo Link Here" id="userPhoto">
+        </div>
+        </div>
+
+
 			
 			<!--Start of Questions-->
-		 	<div class="form-group">
-    			<label for="Question_1">1. How Sociable Are You? (5 being a social butterly and 1 being introverted)</label>
-    			<select class="form-control" id="Question_1">
-     		 		<option value="" disabled selected>Choose your option</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-    			</select>
-  			</div>
+		 	 <div class="form-group">
+          <label for="Question_1">1. How Sociable Are You? (5 being a social butterly and 1 being introverted)</label>
+          <select class="form-control" id="Question_1">
+            <option value="" disabled selected>Choose your option</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
   			<div class="form-group">
     			<label for="Question_2">2. How big of a group do you like/want? (5 being pretty big and 1 being a pretty small)</label>
     			<select class="form-control" id="Question_2">
@@ -204,6 +212,7 @@
             <i class="fa fa-check-circle" aria-hidden="true"></i>
             Submit
         </button>
+
 		</div>
 
       <!--Display for closest match-->
@@ -216,17 +225,6 @@
       </div>
 	</div>
 <script type="text/javascript">
-  $(document).ready(function() {
-      $('select').material_select();
-      $('.modal').modal({
-        dismissible: false, // Modal can be dismissed by clicking outside of the modal
-        opacity: .5, // Opacity of modal background
-        inDuration: 300, // Transition in duration
-        outDuration: 200, // Transition out duration
-        startingTop: '4%', // Starting top style attribute
-        endingTop: '10%' // Ending top style attribute
-      });
-  });
 
   $('#submit').on('click', function(event) {
       event.preventDefault();
@@ -235,16 +233,16 @@
         name: $('#userName').val().trim(),
         photo: $('#userPhoto').val().trim(),
         scores:[
-          $('#question1').val().trim(),
-          $('#question2').val().trim(),
-          $('#question3').val().trim(),
-          $('#question4').val().trim(),
-          $('#question5').val().trim(),
-          $('#question6').val().trim(),
-          $('#question7').val().trim(),
-          $('#question8').val().trim(),
-          $('#question9').val().trim(),
-          $('#question10').val().trim()
+          $('#Question_1').val().trim(),
+          $('#Question_2').val().trim(),
+          $('#Question_3').val().trim(),
+          $('#Question_4').val().trim(),
+          $('#Question_5').val().trim(),
+          $('#Question_6').val().trim(),
+          $('#Question_7').val().trim(),
+          $('#Question_8').val().trim(),
+          $('#Question_9').val().trim(),
+          $('#Question_10').val().trim()
         ]
       };
 
