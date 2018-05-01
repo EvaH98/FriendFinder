@@ -8,4 +8,4 @@ The survey matches you up with the most compatible concert buddy so you're exper
 
 Because no one should go to concerts alone!
 
-https://media.giphy.com/media/vc6CpoMP4zxUA/giphy.gif
+<img src="https://media.giphy.com/media/vc6CpoMP4zxUA/giphy.gif">
